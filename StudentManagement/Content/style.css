@@ -1,0 +1,118 @@
+﻿/* Slider container */
+.slider {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slide images */
+.slides .slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Slide positions */
+.slides input {
+    display: none;
+}
+
+/* Slide styling */
+.slide {
+    position: absolute;
+    width: 100%;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+    /* First slide (default visible) */
+    .slide.first {
+        opacity: 1;
+    }
+
+/* Slide visibility based on radio buttons */
+#img-1:checked ~ .first {
+    opacity: 1;
+}
+
+#img-2:checked ~ .slide:nth-child(2) {
+    opacity: 1;
+}
+
+#img-3:checked ~ .slide:nth-child(3) {
+    opacity: 1;
+}
+
+/* Automatic navigation indicators */
+.navigation-auto div {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 15px 5px;
+}
+
+/* Manual navigation buttons */
+.navigation-manual .manual-btn {
+    cursor: pointer;
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+}
+/* Main styles */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+    min-width: 200px;
+    max-width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+/* Sidebar link styles */
+.sidebar a.nav-link {
+    color: #adb5bd;
+}
+
+.sidebar a.nav-link:hover {
+    color: #ffffff;
+    background-color: #495057;
+}
+
+.sidebar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Content area */
+.content-area {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Media query to show the navbar-toggler on smaller screens */
+@media (max-width: 576px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    /* Adjust content area margin to 0 for mobile view */
+    .content-area {
+        margin-left: 0;
+    }
+}
